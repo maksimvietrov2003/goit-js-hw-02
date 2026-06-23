@@ -1,10 +1,18 @@
 
-function getShippingMessage(country,price,deliveryFee){
 
-    const totalPrice = price + deliveryFee;
+function formatMessage(message,maxLength){
 
-   return `Shipping to ${country} will cost ${totalPrice} credits`
+
+    if(message.length <= maxLength){
+
+        return message
+
+    }else{
+
+    return message.slice(0, maxLength) + "...";
+
+
+    }
+
 }
-console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
-console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
-console.log(getShippingMessage("Sweden", 100, 20)); 
+

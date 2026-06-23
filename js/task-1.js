@@ -1,11 +1,25 @@
-function makeTransaction(quantity ,pricePerDroid){
 
-    let totalPrice = quantity * pricePerDroid
+let quantity = 0;
+let pricePerDroid = 0;
+let customerCredits = 0;
 
-    return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+
+function makeTransaction(quantity,pricePerDroid,customerCredits){
+
+let totalPrice = 0;
+
+    totalPrice = quantity * pricePerDroid;
+    
+    if(customerCredits < totalPrice){
+
+return console.log("Insufficient funds!")
+
+    }else{
+
+      return  console.log(`You ordered ${quantity} droids worth ${totalPrice} credits!`)
+    }
+
+    
+
+
 }
-
-
-console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
